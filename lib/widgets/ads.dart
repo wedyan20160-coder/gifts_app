@@ -23,7 +23,7 @@ class _AdsState extends State<Ads> {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Expanded(
-            flex: 1,
+            flex: 2,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.end,
@@ -33,6 +33,7 @@ class _AdsState extends State<Ads> {
               ],
             ),
           ),
+          SizedBox(width: 15,),
           Expanded(
               flex: 1,
               child: Image.asset(widget.image)

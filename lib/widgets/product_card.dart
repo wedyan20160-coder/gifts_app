@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gifts_app/logic/app_lists.dart';
 import 'package:gifts_app/logic/product.dart';
 import 'package:gifts_app/widgets/colors.dart';
 
@@ -50,7 +51,8 @@ class _ProductCardState extends State<ProductCard> {
               children: [
                 InkWell(
                   onTap: () {
-                    //add to cart
+                    AppLists.productInCart.add(widget.product);
+                    print(AppLists.productInCart);
                   },
                   child: Container(
                     height: 35,

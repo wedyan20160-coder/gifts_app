@@ -4,14 +4,13 @@ import 'package:gifts_app/widgets/colors.dart';
 class CategoryBox extends StatelessWidget {
   final String icon;
   final String title;
-  const CategoryBox({super.key, required this.icon, required this.title});
+  final VoidCallback action;
+  const CategoryBox({super.key, required this.icon, required this.title, required this.action});
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {
-
-      },
+      onTap: action,
       borderRadius: BorderRadius.circular(20),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,

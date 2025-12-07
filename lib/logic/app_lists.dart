@@ -11,23 +11,31 @@ class AppLists {
   ];
 
   static List<Product> productsList = [
-    Product(name: 'توليب', price: 20.0, image: 'assets/bouquet_icon.png'),
-    Product(name: 'توليب', price: 20.0, image: 'assets/bouquet_icon.png'),
-    Product(name: 'توليب', price: 20.0, image: 'assets/bouquet_icon.png'),
-    Product(name: 'توليب', price: 20.0, image: 'assets/bouquet_icon.png'),
-    Product(name: 'توليب', price: 20.0, image: 'assets/bouquet_icon.png'),
-    Product(name: 'توليب', price: 20.0, image: 'assets/bouquet_icon.png'),
-    Product(name: 'توليب', price: 20.0, image: 'assets/bouquet_icon.png'),
-    Product(name: 'توليب', price: 20.0, image: 'assets/bouquet_icon.png'),
+    Product(name: 'ورد جوري', price: 20.0, image: 'assets/bouquet_icon.png', category: 'ورد', content: []),
+    Product(name: 'جوري', price: 20.0, image: 'assets/bouquet_icon.png', category: 'ورد', content: []),
+    Product(name: 'توليب', price: 20.0, image: 'assets/bouquet_icon.png', category: 'ورد', content: []),
+    Product(name: 'توليب', price: 20.0, image: 'assets/bouquet_icon.png', category: 'ورد', content: []),
+    Product(name: 'توليب', price: 20.0, image: 'assets/gift_icon.png', category: 'هدايا', content: []),
+    Product(name: 'توليب', price: 20.0, image: 'assets/gift_icon.png', category: 'هدايا', content: []),
+    Product(name: 'توليب', price: 20.0, image: 'assets/gift_icon.png', category: 'هدايا', content: []),
+    Product(name: 'توليب', price: 20.0, image: 'assets/gift_icon.png', category: 'هدايا', content: []),
+    Product(name: 'توليب', price: 20.0, image: 'assets/cake_icon.png', category: 'حلويات', content: []),
+    Product(name: 'توليب', price: 20.0, image: 'assets/cake_icon.png', category: 'حلويات', content: []),
+    Product(name: 'توليب', price: 20.0, image: 'assets/cake_icon.png', category: 'حلويات', content: []),
+    Product(name: 'توليب', price: 20.0, image: 'assets/cake_icon.png', category: 'حلويات', content: []),
+    Product(name: 'توليب', price: 20.0, image: 'assets/balloons_icon.png', category: 'بالونات', content: []),
+    Product(name: 'توليب', price: 20.0, image: 'assets/balloons_icon.png', category: 'بالونات', content: []),
+    Product(name: 'توليب', price: 20.0, image: 'assets/balloons_icon.png', category: 'بالونات', content: []),
+    Product(name: 'توليب', price: 20.0, image: 'assets/balloons_icon.png', category: 'بالونات', content: []),
   ];
 
   static List<Ads> adsList = [
-    Ads(title: 'عرض حصري يصل الى 30%', description: 'استمتع بالعرض الكبير الخاص بنا كل يوم', image: 'assets/bouquet_icon.png', buttonColor: mainColor,),
-    Ads(title: 'عرض حصري يصل الى 30%', description: 'استمتعم', image: 'assets/balloons_icon.png'),
-    Ads(title: 'عرض حصري يصل الى 30%', description: 'استمتع بالعرض الكبير الخاص بنا كل يوم', image: 'assets/cake_icon.png'),
-    Ads(title: 'عرض حصري يصل الى 30%', description: 'استمتع بالعرض الكبير الخاص بنا كل يوم', image: 'assets/gift_icon.png'),
+    Ads(title: 'احتفل بنهاية العام مع أحبائك', description: 'خصومات تصل إلى 30% على جميع الهدايا الموسمية', image: 'assets/bouquet_icon.png', buttonColor: mainColor,),
+    Ads(title: 'شارك أجمل اللحظات مع أصدقائك', description: 'هدايا تبدأ من عشرين دولاراً فقط', image: 'assets/balloons_icon.png'),
+    Ads(title: 'لا تفوّت الفرصة', description: 'خصومات حصرية على مختارات الهدايا حتى مساء الأحد', image: 'assets/cake_icon.png'),
   ];
 
+  static List<Product> productInCart = [];
 
 
 }
