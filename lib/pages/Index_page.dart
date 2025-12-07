@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gifts_app/logic/app_lists.dart';
 import 'package:gifts_app/pages/account_page.dart';
 import 'package:gifts_app/pages/cart_page.dart';
 import 'package:gifts_app/pages/home_page.dart';
@@ -15,10 +16,11 @@ class IndexPage extends StatefulWidget {
 class _IndexPageState extends State<IndexPage> {
   int _navIndex = 0;
   late List<Widget> _pages;
+  final GlobalKey<SearchPageState> searchKey = GlobalKey<SearchPageState>();
+
 
   @override
-  void initState() {
-    super.initState();
+  Widget build(BuildContext context) {
     _pages = [
       HomePage(
         user_info: {
@@ -26,13 +28,15 @@ class _IndexPageState extends State<IndexPage> {
           'password' : '12345',
           'email' : 'heyambaatwah@gmail.com'
         },
-        onChangeTab: (index) {
+        onChangeTab: (index, category) {
           setState(() {
+            searchKey.currentState!.changeCategory(category);
             _navIndex = index;
           });
         },
       ),
       SearchPage(
+        key: searchKey,
         user_info: {
           'username' : 'هيام',
           'password' : '12345',
@@ -42,10 +46,6 @@ class _IndexPageState extends State<IndexPage> {
       CartPage(),
       AccountPage()
     ];
-  }
-
-  @override
-  Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: pageColor,
       body: IndexedStack(

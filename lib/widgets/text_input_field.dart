@@ -4,8 +4,9 @@ import 'package:gifts_app/widgets/colors.dart';
 class TextInputField extends StatefulWidget {
   final String title;
   final String hint;
-  final Function validator;
-  const TextInputField({super.key, required this.title, required this.hint, required this.validator});
+  final TextEditingController controller;
+  final FormFieldValidator<String>? validator;
+  const TextInputField({super.key, required this.title, required this.hint, required this.validator, required this.controller});
 
   @override
   State<TextInputField> createState() => _TextInputFieldState();
@@ -23,6 +24,7 @@ class _TextInputFieldState extends State<TextInputField> {
           height: 60,
           width: double.infinity,
           child: TextFormField(
+            controller: widget.controller,
             textDirection: TextDirection.rtl,
             textAlign: TextAlign.right,
             decoration: InputDecoration(
@@ -39,8 +41,16 @@ class _TextInputFieldState extends State<TextInputField> {
                 borderRadius: BorderRadius.circular(30),
                 borderSide: BorderSide(color: mainColor, width: 2),
               ),
+              errorBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(30),
+                borderSide: BorderSide(color: Colors.red, width: 2),
+              ),
+              focusedErrorBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(30),
+                borderSide: BorderSide(color: Colors.red, width: 2),
+              ),
             ),
-            validator: widget.validator()
+            validator: widget.validator
           ),
         ),
       ],

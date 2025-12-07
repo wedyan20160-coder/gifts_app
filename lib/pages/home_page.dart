@@ -8,8 +8,7 @@ import '../widgets/ads.dart';
 
 class HomePage extends StatefulWidget {
   final Map<String, dynamic> user_info;
-  final Function(int) onChangeTab;
-
+  final Function(int, String) onChangeTab;
   const HomePage({super.key, required this.user_info, required this.onChangeTab,});
 
   @override
@@ -17,10 +16,10 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  Ads currentAds = AppLists.adsList[0];
 
   @override
   Widget build(BuildContext context) {
-    Ads currentAds = AppLists.adsList[0];
 
     return Padding(
       padding: const EdgeInsets.only(top: 50, right: 20, left: 20),
@@ -62,8 +61,8 @@ class _HomePageState extends State<HomePage> {
                   });
                 },
                 child: Container(
-                  height: 12,
-                  width: 12,
+                  height: 10,
+                  width: 10,
                   margin: EdgeInsets.all(2),
                   decoration: ShapeDecoration(
                     color: AppLists.adsList[index].buttonColor,
@@ -77,18 +76,20 @@ class _HomePageState extends State<HomePage> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: List.generate(AppLists.categories.length, (index) {
-              return CategoryBox(icon: AppLists.categories[index][0], title: AppLists.categories[index][1]);
+              return CategoryBox(icon: AppLists.categories[index][0], title: AppLists.categories[index][1], action: () {
+                widget.onChangeTab(1, AppLists.categories[index][1]);
+              });
             }),
           ),
-          SizedBox(height:15),
+          SizedBox(height:10),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              InkWell(
-                onTap: () {
-                  widget.onChangeTab(1);
-                },
-                child: Text('المزيد', style: TextStyle(color: mainColor, fontSize: 18, fontWeight: FontWeight.bold, decoration: TextDecoration.underline), textDirection: TextDirection.rtl, textAlign: TextAlign.right,)
+              TextButton(
+                  onPressed: () {
+                    widget.onChangeTab(1, '');
+                  },
+                  child: Text('المزيد', style: TextStyle(color: mainColor, fontSize: 18, fontWeight: FontWeight.bold, decoration: TextDecoration.underline), textDirection: TextDirection.rtl, textAlign: TextAlign.right,)
               ),
               Text('الأكثر شعبية', style: TextStyle(color: Colors.black, fontSize: 25, fontWeight: FontWeight.bold), textDirection: TextDirection.rtl, textAlign: TextAlign.right,)
             ],
